@@ -11,8 +11,15 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "bootstrap-vue": "^2.23.1",
+    "element-plus": "^2.9.2",
     "nuxt": "^3.15.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vuetify": "^3.7.6"
   }
 }

@@ -1,16 +1,6 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the index page of the application.</p>
   </div>
 </template>
-
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const message = ref('');
-
-onMounted(async () => {
-  const { data } = await useAxios('/message');
-  message.value = data.message;
-});
-</script>
