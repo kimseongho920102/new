@@ -2,11 +2,15 @@
   <div class="register-page">
     <h1>Register</h1>
     <form @submit.prevent="handleSubmit">
-      <label for="name">Name</label>
-      <input type="text" id="name" v-model="name" placeholder="Enter your name" />
+     
+      <label for="userId">userId</label>
+      <input type="text" id="userId" v-model="userId" placeholder="Enter your userId" />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" v-model="email" placeholder="Enter your email" />
+      <label for="userName">userName</label>
+      <input type="text" id="userName" v-model="userName" placeholder="Enter your name" />
+
+      <label for="userEmail">userEmail</label>
+      <input type="email" id="userEmail" v-model="userEmail" placeholder="Enter your email" />
 
       <label for="password">Password</label>
       <input type="password" id="password" v-model="password" placeholder="Enter your password" />
