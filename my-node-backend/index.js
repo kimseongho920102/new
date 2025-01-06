@@ -2,6 +2,7 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 
 const app = express();
 const PORT = 4000;
@@ -9,6 +10,16 @@ const saltRounds = 10;
 
 // Middleware
 app.use(bodyParser.json());
+
+// CORS 설정
+app.use(cors({
+  origin: 'http://34.64.157.30:3000', // 프론트엔드 주소를 입력
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // 허용할 HTTP 메서드
+  credentials: true // 쿠키 및 인증 정보를 허용
+}));
+
+// 다른 미들웨어 및 라우터 설정
+app.use(express.json());
 
 // Database setup
 const db = new sqlite3.Database('./users.db', (err) => {
