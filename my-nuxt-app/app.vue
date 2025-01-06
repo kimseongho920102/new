@@ -6,7 +6,9 @@
       <nuxt-link to="/register">Register</nuxt-link>
     </header>
     <main>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </main>
   </div>
 </template>
