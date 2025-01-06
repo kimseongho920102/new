@@ -12,12 +12,14 @@ export default defineNuxtConfig({
       mode: 'out-in', // 전환 모드 (out-in 또는 in-out)
     },
   },
+
   serverHandlers: [
     {
       route: '/api/**', // '/api' 경로로 오는 요청을 미들웨어로 전달
       handler: '~/server/middleware/proxy.js',
     },
   ],
+
   devServer: {
     host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 가능하도록 설정
     port: 3000,      // 기본 포트
@@ -30,18 +32,19 @@ export default defineNuxtConfig({
     },
   },
 
-    css: ['@/assets/css/tailwind.css'],
-    postcss: {
-      plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-      },
+  css: ['@/assets/css/tailwind.css'],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
     },
+  },
 
   // 타입스크립트 설정
   typescript: {
     strict: true,
   },
 
-  compatibilityDate: '2025-01-04',
+  compatibilityDate: '2025-01-06',
 });

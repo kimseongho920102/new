@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
     const { req, res } = event.node;
   
     // 요청을 백엔드로 전달
-    const targetUrl = `http://localhost:4000${req.url}`;
+    const targetUrl = `http://34.64.157.30:3000/${req.url}`;
     const proxyRequest = await fetch(targetUrl, {
       method: req.method,
       headers: req.headers,
