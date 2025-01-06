@@ -28,7 +28,7 @@ export default defineNuxtConfig({
   // 환경 변수 로드 (백엔드 URL 관리)
   runtimeConfig: {
     public: {
-      apiBase: 'http://34.64.157.30:4000/api', // 백엔드 API URL
+      apiBase: '/api', // 백엔드 API URL
     },
   },
 

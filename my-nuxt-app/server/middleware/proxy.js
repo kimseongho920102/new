@@ -1,18 +1,15 @@
-export default defineEventHandler(async (event) => {
-    const { req, res } = event.node;
-  
-    // 요청을 백엔드로 전달
-    const targetUrl = `http://34.64.157.30:3000/${req.url}`;
-    const proxyRequest = await fetch(targetUrl, {
-      method: req.method,
-      headers: req.headers,
-      body: req.method === 'POST' ? await readBody(event) : undefined,
-    });
-  
-    // 응답 전송
-    const responseBody = await proxyRequest.text();
-    res.statusCode = proxyRequest.status;
-    res.setHeader('Content-Type', proxyRequest.headers.get('content-type') || 'text/plain');
-    res.end(responseBody);
+import { createProxyMiddleware } from 'http-proxy-middleware';
+
+export default defineEventHandler((event) => {
+  const proxy = createProxyMiddleware({
+    target: 'http://34.64.157.30:4000', // API 서버 URL
+    changeOrigin: true, // CORS 회피
+    pathRewrite: { '^/api': '' }, // `/api`로 시작하는 경로를 제거
   });
-  
+
+  return proxy(event.req, event.res, (err) => {
+    if (err) {
+      console.error('Proxy Error:', err);
+    }
+  });
+});
