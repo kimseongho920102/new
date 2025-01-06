@@ -35,8 +35,9 @@ export default {
   name: "RegisterPage",
   data() {
     return {
-      name: "",
-      email: "",
+      userId:"",
+      userName: "",
+      userEmail: "",
       password: "",
       confirmPassword: "",
     };
@@ -52,8 +53,9 @@ export default {
         const response = await axios.post(
           "http://34.64.157.30:4000/api/register",
           {
-            user_name: this.name,
-            user_email: this.email,
+            userId: this.userId,
+            userName: this.userName,
+            userEmail: this.userEmail,
             password: this.password,
           }
         );
