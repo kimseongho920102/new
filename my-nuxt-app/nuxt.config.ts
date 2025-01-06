@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     },
   },
 
+  // 서버 핸들러 설정
   serverHandlers: [
     {
       route: '/api/**', // '/api' 경로로 오는 요청을 미들웨어로 전달
@@ -20,6 +21,7 @@ export default defineNuxtConfig({
     },
   ],
 
+  // 개발 서버 설정
   devServer: {
     host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 가능하도록 설정
     port: 3000,      // 기본 포트
@@ -32,8 +34,10 @@ export default defineNuxtConfig({
     },
   },
 
+  // CSS 파일 로드
   css: ['@/assets/css/tailwind.css'],
 
+  // PostCSS 플러그인 설정
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -46,5 +50,6 @@ export default defineNuxtConfig({
     strict: true,
   },
 
+  // 호환성 날짜 설정
   compatibilityDate: '2025-01-06',
 });
