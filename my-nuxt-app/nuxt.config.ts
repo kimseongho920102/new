@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     },
   },
   
+  devServer: {
+    host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 가능하도록 설정
+    port: 3000,      // 기본 포트
+  },
   
   // 환경 변수 로드 (백엔드 URL 관리)
   runtimeConfig: {
