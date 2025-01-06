@@ -17,11 +17,11 @@ export default defineNuxtConfig({
     host: '0.0.0.0', // 모든 네트워크 인터페이스에서 접근 가능하도록 설정
     port: 3000,      // 기본 포트
   },
-  
+
   // 환경 변수 로드 (백엔드 URL 관리)
   runtimeConfig: {
     public: {
-      apiBase: 'http://localhost:4000/api', // 백엔드 API URL
+      apiBase: 'http://34.64.157.30:4000/api', // 백엔드 API URL
     },
   },
 

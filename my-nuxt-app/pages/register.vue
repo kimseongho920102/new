@@ -46,7 +46,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/register",
+          "http://34.64.157.30:4000/api/register",
           {
             user_name: this.name,
             user_email: this.email,
